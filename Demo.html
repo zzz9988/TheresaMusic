@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+         body {
+                display: flex;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+         .main{
+              margin-left: 9%;
+              margin-top: 2%;
+              border: 10px solid black;
+              height: 100%;
+              width: 120%;
+              background-color: #3b3a3a;
+              float: right;
+              color: aliceblue;
+              background-image: url(wallpaperflare.com_wallpaper.jpg);
+              background-repeat: no-repeat;
+              background-size: cover;
+         }
+
+        td,th {
+            padding:5px 0; 
+            text-align: center;
+            
+            }
+            
+        .main table{
+            border-spacing: 50px 10px;
+        }
+    
+        
+
+                    
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                border: 20px solid rgb(49, 6, 49);
+                width: 170px;
+                height: 100%;
+                background: rgb(56, 7, 56);
+                color: white;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .sidebar button{
+                padding: 8px 16px;
+                font-size: 13px;
+                cursor: pointer;
+                background-color: rgb(56, 7, 56);
+                color: aliceblue;
+                border: 100px;
+            }
+
+            
+            .search-bar {
+                margin-left: 9%;
+                position: fixed;
+                top: 0;
+                left: 0; 
+                width: 92%; 
+                padding: 10px;
+                background: #110404;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .search-bar input {
+                width: 100%;
+                padding: 8px;
+                font-size: 16px;
+            }
+
+            .search-bar button {
+                padding: 8px 16px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+.song-container {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+padding: 20px;
+text-align: center;
+            }
+
+.song-box {
+  width: 150px;
+  margin: 10px;
+  color: white;
+}
+
+.song-box img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 8px 0 2px;
+}
+
+               .artist {
+               font-size: 14px;
+               color: #ccc;
+                }
+
+        </style>
+        <title>
+            TM
+        </title>
+    </head>
+    <body>
+    <div class="search-bar">
+            <input  type="text" placeholder="Hãy Nhập Tên Bài Hát"/>
+            <button> tim</button>
+    </div>
+
+
+    <div class="sidebar">
+    <a href="http://127.0.0.1:5500/HOME.html" target="_sefl" title="Trở về Home">
+        <img src="theresa.png" height="80">
+    </a>
+    <br>
+     <button>
+        <a href="http://127.0.0.1:5500/HOME.html" target="_self" title="Trở về Home">
+        Khám Phá
+        </a>
+     </button>
+     <br>
+     <button>Play List</button>
+     <br>
+     <Button>
+        <a href="http://127.0.0.1:5500/DangNhap.html" >Tài Khoản</a></Button>
+     </div>
+
+
+     <div class="main">
+        <h1  style="color: white;">Danh Sách Các Bài hát Được Yêu Thích Nhất</h1>
+
+<div class="song-container">
+  <div class="song-box">
+    <a href="thongtinmonitor.html">
+      <img src="artworks-zj26ksurO1jziY8F-avo19Q-t500x500.jpg" alt="Monitoring">
+    </a>
+    <p class="title">Monitoring</p>
+    <p class="artist">Deco*27</p>
+  </div>
+
+  <div class="song-box">
+    <a href="thongtinnightsky.html">
+      <img src="artworks-000168747774-km7vyi-t500x500.jpg" alt="Night Sky">
+    </a>
+    <p class="title">アスノヨゾラ哨戒班</p>
+    <p class="artist">Orangestar</p>
+  </div>
+
+  <div class="song-box">
+    <a href="thongtinAcross.html">
+      <img src="ab67616d0000b273c017c4e208b9aa70cd07a1d2.jpg" alt="Across the Wind">
+    </a>
+    <p class="title">Across The Wind</p>
+    <p class="artist">Arknights</p>
+  </div>
+
+  <div class="song-box">
+    <a href="thongtinharu.html">
+      <img src="Haru.jpg" alt="Haru">
+    </a>
+    <p class="title">Haru</p>
+    <p class="artist">Yorushika</p>
+  </div>
+
+  <div class="song-box">
+    <a href="thongtinhome.html">
+      <img src="VexentoHome.jpg" alt="Home">
+    </a>
+    <p class="title">Home</p>
+    <p class="artist">Vexento</p>
+  </div>
+</div>
+        <hr>
+    <h1 style="color: white;">Các Ca Sĩ Đang Nổi</h1>
+<table id="box2">
+    <tr>
+        <th><img src="yorushika.jpg" height="100"></th>
+        <th><img src="Orangestar.jpg" height="100"></th>
+        <th><img src="deco27.jpg" height="100"></th>
+        <th><img src="arknights.jpg" height="100"></th>
+        <th><img src="Yoasobi.jpg" height="100"></th>
+        <th><img src="Rose.jpg" height="100"></th>
+        <th><img src="Sakanation.jpg" height="100"></th>
+        <th><img src="Hoyomix.jpg" height="100"></th>
+        <th><img src="vexento.jpg" height="100"></th>
+        <th><img src="eminem.jpg" height="100"></th>
+    </tr>
+    <tr>
+        <td><h3>Yorushika</h3></td>
+        <td><h3>Orangestar</h3></td>
+        <td><h3>Deco*27</h3></td>
+        <td><h3>Arknights</h3></td>
+        <td><h3>Yoasobi</h3></td>
+        <td><h3>Rose</h3></td>
+        <td><h3>Sakanaction</h3></td>
+        <td><h3>Hoyo-MiX</h3></td>
+        <td><h3>Vexento</h3></td>
+        <td><h3>Eminem</h3></td>
+    </tr>
+</table>
+    </div>
+    </body>
+</html>
