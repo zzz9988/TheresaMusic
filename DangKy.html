@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" href="theresa.png">
+        <style>
+            body {
+                   display: flex;
+                   height: 100vh;
+                   margin: 0;
+                   font-family: Arial, sans-serif;
+               }
+            .main{
+                 margin-left: 9%;
+                 margin-top: 2%;
+                 border: 10px solid black;
+                 height: 100%;
+                 width: 120%;
+                 background-color: #3b3a3a;
+                 float: right;
+                 color: rgb(152, 153, 155);
+                 background-image: url(wallpaperflare.com_wallpaper.jpg);
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 gap: 10px;
+            }
+   
+           td,th {
+               padding:5px 0; 
+               text-align: center;
+               }
+               
+           .main table{
+               border-spacing: 50px 10px;
+           }
+       
+           
+   
+                       
+               .sidebar {
+                   position: fixed;
+                   top: 0;
+                   left: 0;
+                   border: 20px solid rgb(49, 6, 49);
+                   width: 170px;
+                   height: 100%;
+                   background: rgb(56, 7, 56);
+                   color: white;
+                   padding: 10px;
+                   box-sizing: border-box;
+               }
+               .sidebar button{
+                   padding: 8px 16px;
+                   font-size: 13px;
+                   cursor: pointer;
+                   background-color: rgb(56, 7, 56);
+                   color: aliceblue;
+                   border: 100px;
+               }
+   
+               
+               .search-bar {
+                   margin-left: 9%;
+                   position: fixed;
+                   top: 0;
+                   left: 0; 
+                   width: 92%; 
+                   padding: 10px;
+                   background: #110404;
+                   box-sizing: border-box;
+                   display: flex;
+                   justify-content: space-between;
+                   align-items: center;
+               }
+   
+               .search-bar input {
+                   width: 100%;
+                   padding: 8px;
+                   font-size: 16px;
+               }
+   
+               .search-bar button {
+                   padding: 8px 16px;
+                   font-size: 16px;
+                   cursor: pointer;
+               }
+               form{
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+               padding: 30px;
+               background: rgba(0,0,0,0.1);
+               border: 1px solid #ddd;
+               border-radius: 10px;
+               box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+               min-width: 300px;
+               color: #ddd;
+}
+              #Username,#Password{
+                height: 30px;
+              }
+               
+   
+           </style>
+        <title>Trang Đăng Ký</title>
+    </head>
+    <body>
+        <div class="search-bar">
+            <input  type="text" placeholder="Hãy Nhập Tên Bài Hát"/>
+            <button> tim</button>
+    </div>
+
+
+    <div class="sidebar">
+    <a href="index.html" target="_sefl" title="Trở về Home">
+        <img src="theresa.png" height="80">
+    </a>
+    <br>
+     <button>
+        <a href="index.html"  title="Trở về Home">
+        Trang chủ
+        </a>
+     </button>
+     <br>
+     <button>Play List</button>
+     <br>
+     <Button>Tài Khoản</Button>
+     </div>
+
+        <div class="main">
+        <form>
+
+            <label for="Username">Username:</label>
+            <input type="text" id="Username" >
+            <br>
+            <label for="Password">Password:</label>
+            <input type="password" id="Password" >
+            <br>
+            <label for="Password">Confirm:</label>
+            <input type="password" id="Password" >
+            <br>
+            <input type="submit">
+
+            <button>
+            <a href="http://127.0.0.1:5500/DangNhap.html" target="_self">
+                Đăng Nhập
+            </a>
+            </button>
+        </form>
+        </div>
+    </div>
+    </body>
+</html>
