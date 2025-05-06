@@ -1,81 +1,241 @@
-const songs = [
-    {
-        name: "Home",
-        src: "Vexento - Home.mp3",
-    },
-    {
-        name: "Bài khác",
-        src: "song2.mp3", // Bạn thêm bài khác ở đây
-    },
-    {
-        name: "Bài khác nữa",
-        src: "song3.mp3", // Và đây nữa
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>TM</title>
+  <link rel="icon" href="theresa.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      background-image: url('backgroundNightSky.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+      position: relative;
     }
-];
 
-let currentSongIndex = 0;
+    h1 {
+      color: #ffffff;
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-const audio = document.getElementById('audio');
-const playPauseBtn = document.getElementById('play-pause-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-const progressBar = document.getElementById('progress-bar');
-const songTitle = document.getElementById('song-title');
+    .main table{
+            border-spacing: 50px 10px;
+        }
+    th {
+            width: 150px;
+            padding:20px ; 
+            text-align: center;
+            border: 5px solid #ddd transparent;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            }
+    th:hover {
+            transform: scale(1.03); 
+            }
 
-// Load bài hát
-function loadSong(index) {
-    audio.src = songs[index].src;
-    songTitle.textContent = songs[index].name;
-    audio.load();
+
+    img {
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    summary {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    details {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    details summary {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-radius: 10px;
+      border: 2px solid #ffffff40;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+    }
+
+    details[open] summary {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    details summary:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.02);
+      cursor: pointer;
+    }
+
+    .thanh-ngang {
+    background-color: rgb(102, 20, 127);
+    border: 8px solid black;
+    display: flex;
+    align-items: center;
+
 }
 
-// Play hoặc Pause
-playPauseBtn.addEventListener('click', () => {
-    if (audio.paused) {
-        audio.play();
-        playPauseBtn.textContent = '⏸️';
-    } else {
-        audio.pause();
-        playPauseBtn.textContent = '▶️';
+.thanh-ngang input[type="text"] {
+    width: 100%;
+    max-width: 1200px;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    border: 4px solid black;
+
+    border-radius: 8px;
+}
+
+.thanh-ngang button {
+    height: 40px;
+    font-size: 16px;
+    background-color: white;
+    border: 4px solid black;
+    padding: 0 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+    margin-left: 40px;
+}
+
+.thanh-ngang button:hover {
+    background-color: #e0e0e0;
+}
+    details {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 10px;
+      z-index: 1;
+      }   
+      .bxh{
+        text-align: center;
+        font-size: 50px;
+        ;
+
+      }
+      .bxh a{
+    text-decoration: none;
+    color:#ffd54f;
+}
+.suggestions {
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%; /* Chiều dài bằng 100% ô tìm kiếm */
+ background: rgb(255, 255, 255);
+border: 1px solid #c1b2b2;
+z-index: 10;
+color: black;
+}
+
+ .suggestions div {
+padding: 10px;
+font-size: 20px;
+cursor: pointer;
+transition: background 0.2s;
     }
-});
 
-// Next bài hát
-nextBtn.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong(currentSongIndex);
-    audio.play();
-    playPauseBtn.textContent = '⏸️';
-});
-
-// Previous bài hát
-prevBtn.addEventListener('click', () => {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-    loadSong(currentSongIndex);
-    audio.play();
-    playPauseBtn.textContent = '⏸️';
-});
-
-// Cập nhật tiến trình
-audio.addEventListener('timeupdate', () => {
-    if (audio.duration) {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.value = progress;
+.suggestions div:hover {
+background: #f2f2f2;
     }
-});
-
-// Kéo tiến trình
-progressBar.addEventListener('input', () => {
-    if (audio.duration) {
-        const seekTime = (progressBar.value / 100) * audio.duration;
-        audio.currentTime = seekTime;
+.input-wrapper {
+position: relative;
+ width: 1200px; /* Đảm bảo giống width input */
     }
-});
+  </style>
+</head>
+<body>
+  <form action="#" method="GET">
+    <div class="thanh-ngang">
+        <a href="index.html" target="_self" title="trở về home">
+            <img src="theresa.png" height="80">
+        </a>    
+        <div class="input-wrapper">
+          <input type="text" name="tenbaihat" placeholder="Nhập tên bài hát"> 
+          <div class="suggestions"></div>
+      </div> 
+      <button type="submit">Tìm Kiếm</button>
+  </div>
+</form>
+  <div class="main">
+    <h1>Thể loại</h1> 
+  
+<details>
+  <summary>🎶 Chill & Thư Giãn</summary>
+  <table>
+    <tr>
+      <th><a href="thongtinhome.html"><img src="VexentoHome.jpg" height="100"></a><p>Home<br>Vexento</p></th>
+      <th><a href="thongtinharu.html"><img src="Haru.jpg" height="100"></a><p>Haru<br>Yorushika</p></th>
+      <th><a href="thongtinWhitenight.html"><img src="whitenights.jpg" height="100"></a><p>White Nights<br>Jake Miller, HOYO-MiX</p></th>
+      <th><a href="thongtinRobin.html"><img src="Robin.webp" height="100"></a><p>Hope Is the Thing With Feathers<br>Chevy, HOYO-MiX</p></th>
+      <th><a href="thongtinLonely.html"><img src="lonely.jpg" height="100"></a><p>Lonely Dance<br>Vexento</p></th>
+    </tr>
+  </table>
+</details>
 
-// Auto chuyển bài khi hết
-audio.addEventListener('ended', () => {
-    nextBtn.click();
-});
+<!-- 🚀 Epic / Cảm Xúc Mạnh -->
+<details>
+  <summary>🚀 Epic / Cảm Xúc Mạnh</summary>
+  <table>
+    <tr>
+      <th><a href="thongtinAcross.html"><img src="ab67616d0000b273c017c4e208b9aa70cd07a1d2.jpg" height="100"></a><p>Across The Wind<br>Arknights</p></th>
+      <th><a href="thongtinReforge.html"><img src="Reforge.webp" height="100"></a><p>Reforge<br>Chevy, HOYO-MiX</p></th>
+      <th><a href="thongtinnightsky.html"><img src="artworks-000168747774-km7vyi-t500x500.jpg" height="100"></a><p>アスノヨゾラ哨戒班<br>Orangestar</p></th>
+      <th><a href="thongtinWhite.html"><img src="whitenights.jpg" height="100"></a><p>White Nights<br>HOYO-MiX</p></th>
+      <th><a href="thongtinSurge.html"><img src="Sures.jpg" height="100"></a><p>Surges<br>Orangestar</p></th>
+      <th><a href="thongtinmonster.html"><img src="monster.jpg"height="100"></a><p>monster<br>Yoasobi</p></th>
+    </tr>
+  </table>
+</details>
 
-// Load bài đầu tiên lúc vào trang
-loadSong(currentSongIndex);
+<!-- 🔥 Sôi Động / Motivational -->
+<details>
+  <summary>🔥 Sôi Động / Motivational</summary>
+  <table>
+    <tr>
+      <th><a href="thongtinTheNights.html"><img src="avicii.jpg" height="100"></a><p>The Nights<br>Avicii</p></th>
+      <th><a href="thongtinIDOL.html"><img src="idol.jpg" height="100"></a><p>Idol<br>Yoasobi</p></th>
+      <th><a href="thongtinmonitor.html"><img src="artworks-zj26ksurO1jziY8F-avo19Q-t500x500.jpg" height="100"></a><p>Monitoring<br>Deco*27</p></th>
+      <th><a href="thongtinAndroid.html"><img src="Android_Girl_-_Deco_27.jpg" height="100"></a><p>Android Girl<br>Deco*27</p></th>
+    </tr>
+  </table>
+</details>
+
+<!-- 🎨 Indie & Art-style -->
+<details>
+  <summary>🎨 Indie & Art-style</summary>
+  <table>
+    <tr>
+      <th><a href="thongtinKaijuu.html"><img src="kaijuu.jpg" height="100"></a><p>Kaijuu<br>Sakanaction</p></th>
+      <th><a href="thongtinWaitingforlove.html"><img src="waitingforlove.jpg" height="100"></a><p>waitingforlove<br>Avicii</p></th>
+      <th><a href="thongtinWasurete.html"><img src="wasurete.png" height="100"></a><p>wasurete<br>yorushika</p></th>
+    </tr>
+  </table>
+</details>
+<div class="bxh">
+  <a href="bxh.html">Bảng xếp hạng</a></div>
+
+</div>
+  <script src="Timkiem.js"></script>
+</body>
+</html>
