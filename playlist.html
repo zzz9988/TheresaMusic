@@ -86,29 +86,39 @@
     }
 
     .thanh-ngang {
-      background-color: rgb(102, 20, 127);
-      border: 8px solid black;
-      display: flex;
-      align-items: center;
-      margin-top: 0%;
-    }
+    background-color: rgb(102, 20, 127);
+    border: 8px solid black;
+    display: flex;
+    align-items: center;
 
-    .thanh-ngang input[type="text"] {
-      width: 100%;
-      height: 40px;
-      font-size: 18px;
-      padding: 10px;
-      border: 8px solid rgb(0, 0, 0);
-      margin-right: 10px;
-    }
+}
 
-    .thanh-ngang button {
-      height: 70px;
-      width: 80px;
-      font-size: 16px;
-      background-color: rgb(255, 255, 255);
-      border: 4px solid black;
-    }
+.thanh-ngang input[type="text"] {
+    width: 100%;
+    max-width: 1200px;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    border: 4px solid black;
+
+    border-radius: 8px;
+}
+
+.thanh-ngang button {
+    height: 40px;
+    font-size: 16px;
+    background-color: white;
+    border: 4px solid black;
+    padding: 0 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.2s;
+    margin-left: 40px;
+}
+
+.thanh-ngang button:hover {
+    background-color: #e0e0e0;
+}
     details {
       position: relative;
       overflow: hidden;
@@ -127,6 +137,31 @@
     text-decoration: none;
     color:#ffd54f;
 }
+.suggestions {
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%; /* Chiều dài bằng 100% ô tìm kiếm */
+ background: rgb(255, 255, 255);
+border: 1px solid #c1b2b2;
+z-index: 10;
+color: black;
+}
+
+ .suggestions div {
+padding: 10px;
+font-size: 20px;
+cursor: pointer;
+transition: background 0.2s;
+    }
+
+.suggestions div:hover {
+background: #f2f2f2;
+    }
+.input-wrapper {
+position: relative;
+ width: 1200px; /* Đảm bảo giống width input */
+    }
   </style>
 </head>
 <body>
@@ -135,9 +170,12 @@
         <a href="index.html" target="_self" title="trở về home">
             <img src="theresa.png" height="80">
         </a>    
-        <input type="text" name="tenbaihat" placeholder="Nhập tên bài hát"> 
-        <button type="submit">Tìm Kiếm</button>
-    </div>
+        <div class="input-wrapper">
+          <input type="text" name="tenbaihat" placeholder="Nhập tên bài hát"> 
+          <div class="suggestions"></div>
+      </div> 
+      <button type="submit">Tìm Kiếm</button>
+  </div>
 </form>
   <div class="main">
     <h1>Thể loại</h1> 
@@ -189,7 +227,7 @@
   <table>
     <tr>
       <th><a href="thongtinKaijuu.html"><img src="kaijuu.jpg" height="100"></a><p>Kaijuu<br>Sakanaction</p></th>
-      <th><a href="thongtinWaitingforlove.html"><img src="waiting.png" height="100"></a><p>waitingforlove<br>Avicii</p></th>
+      <th><a href="thongtinWaitingforlove.html"><img src="waitingforlove.jpg" height="100"></a><p>waitingforlove<br>Avicii</p></th>
       <th><a href="thongtinWasurete.html"><img src="wasurete.png" height="100"></a><p>wasurete<br>yorushika</p></th>
     </tr>
   </table>
