@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         for (const name of Object.keys(songList)) {
-            if (name.includes(query)) {
+            if (name.startsWith(query)) {
                 const div = document.createElement('div');
                 div.textContent = name;
                 div.addEventListener('click', function() {
